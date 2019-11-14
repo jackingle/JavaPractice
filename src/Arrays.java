@@ -51,6 +51,30 @@ public class Arrays {
 //			System.out.println(x[i] + "a ");
 //		}
 //	}
+	//SORTING ALGORITHMS
+static class SelectionSort {
+	public void selectionSort(int[] arr) {
+		int n = arr.length;
+		for (int i = 0; i < n-1; i++) {
+			int min = i;
+			for (int j = i + 1; j < n; j++)
+				if (arr[j] < arr[min])
+					min = j;
+			int temp = arr[min];
+			arr[min] = arr[i];
+			arr[i] = temp;
+		}
+	}
+	public void printArray(int arr[]) {
+		int n = arr.length;
+		for (int i = 0; i < n; i++)
+			System.out.println(arr[i] + " ");
+		System.out.println();
+	}
+}
+	
+	//SEARCH ALGORITHMS
+	
 	public static int interpolationSearch(int[] arr, int x) {
 		int lo = 0, hi = (arr.length - 1); 
 		while (lo <= hi && x >= arr[lo] && x <= arr[hi]) {
@@ -117,32 +141,48 @@ public class Arrays {
         int arr[] = { 2, 3, 4, 10, 40, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55 }; 
         int n = arr.length; 
         int x = 45; 
-        System.out.println(n);
+        System.out.println(x + " is the number we are looking for in the array");
+        System.out.println(n + " is the array length" + "\n");
+        
+        System.out.println("Selection Sort" + "\n");
+        //Selection Sort
+        SelectionSort ob = new SelectionSort();
+        ob.selectionSort(arr);
+        ob.printArray(arr);
+        
+        System.out.println("Interpolation Search");
         //Interpolation Search
         int index2 = interpolationSearch(arr, x);
         if (index2 != -1) 
             System.out.println("Element found at index " + index2); 
          else
             System.out.println("Element not found.");
+        System.out.println();
+        
+        System.out.println("Jump Search");
         //Jump Search
         int index = jumpSearch(arr, x);
-        System.out.println("\nNumber " + x + 
+        System.out.println("Number " + x + 
         		" is at index " + index);
+        System.out.println();
         
+        System.out.println("Binary Search");
         //Binary Search
         int result = binarySearch(arr, 0, n - 1, x); 
         if (result == -1) 
             System.out.println("Element not present"); 
         else
             System.out.println("Element found at index " + result); 
-		
+		System.out.println();
+        
+        System.out.println("Linear Search");
         //Linear Search
 		int result2 = search(arr, x);
 		if (result2 == -1)
 			System.out.println("Element is not present");
 		else
 			System.out.println("Element is present");
-		
+		System.out.println();
 //		String a[] = new String[6]; {
 //			a[0] = "a";
 //			a[1] = "b";

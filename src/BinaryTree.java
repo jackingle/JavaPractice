@@ -9,6 +9,7 @@ class Node {
 		left = right = null;
 	}
 }
+
 public class BinaryTree {
 	Node root;
 	int minimumDepth() {
@@ -31,7 +32,6 @@ public class BinaryTree {
         return Math.min(minimumDepth(root.left), 
                         minimumDepth(root.right)) + 1; 
     } 
-  
     
     public static void main(String args[]) 
     { 

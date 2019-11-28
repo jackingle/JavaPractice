@@ -11,9 +11,24 @@ import java.util.regex.*;
 public class Solution {
 
     // Complete the rotLeft function below.
-    static int[] rotLeft(int[] a, int d) {
+	static int[] rotLeft(int[] a, int d) {
+        int size = a.length;
+        int[] c = new int[size];
+        int i = 0;
+        int rotate = d;
 
-
+        while (rotate < size) {
+            c[i] = a[rotate];
+            i++;
+            rotate++;
+        }
+        rotate = 0;
+        while (rotate < d) {
+            c[i] = a[rotate];
+            i++;
+            rotate++;
+        }
+        return c;
     }
 
     private static final Scanner scanner = new Scanner(System.in);

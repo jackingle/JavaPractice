@@ -1,5 +1,3 @@
-package hackerrank;
-
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -11,9 +9,21 @@ import java.util.regex.*;
 public class Solution {
 
     // Complete the hourglassSum function below.
+    
     static int hourglassSum(int[][] arr) {
+        
+        int max_sum = Integer.MIN_VALUE;
+                for (int i = 0; i < 4; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        int sum = (arr[i][j] + arr[i][j + 1] +  
+                           arr[i][j + 2]) + (arr[i + 1][j + 1]) +  
+                           (arr[i + 2][j] + arr[i + 2][j + 1] +  
+                           arr[i + 2][j + 2]);
+                        max_sum = Math.max(max_sum, sum);
+                    }
+                }
 
-
+        return max_sum;
     }
 
     private static final Scanner scanner = new Scanner(System.in);

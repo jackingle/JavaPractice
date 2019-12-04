@@ -21,7 +21,7 @@ public class Arrays {
 		c[0][0] = 1;
 		c[0][1] = 2;
 		c[0][2] = 3;
-		
+		 
 		c[1][0] = 4;
 		c[1][1] = 5;
 		c[1][2] = 6;
@@ -65,12 +65,29 @@ static class SelectionSort {
 			arr[i] = temp;
 		}
 	}
-	public void printArray(int arr[]) {
-		int n = arr.length;
-		for (int i = 0; i < n; i++)
+	public void printArray(int[] arr) {
+		
+		for (int i = 0; i < arr.length; i++)
 			System.out.println(arr[i] + " ");
 		System.out.println();
 	}
+}
+public static int[] reverseArray(int[] arr) {
+	for (int i : arr)
+		System.out.print(i + " ");
+	System.out.println();
+	for(int i = 0; i < arr.length/2; i++) {
+		System.out.println(arr[i] + " " + arr[arr.length - 1 - i]);
+		int temp = arr[i];
+		arr[i] = arr[arr.length - 1 - i];
+		arr[arr.length - 1 - i] = temp;
+		System.out.println(arr[i] + " " + arr[arr.length - 1 - i]);
+	}
+	System.out.println();
+	for (int i : arr)
+		System.out.print(i + " ");
+	System.out.println("Oh hi Mark");
+	return arr;
 }
 	
 	//SEARCH ALGORITHMS
@@ -172,6 +189,12 @@ static class SelectionSort {
         SelectionSort ob = new SelectionSort();
         ob.selectionSort(arr);
         ob.printArray(arr);
+        System.out.println("REVERSED ARRAY");
+        
+        arr = Arrays.reverseArray(arr);
+        for(int i : arr)
+        	System.out.print(i+" ");
+        System.out.println();
         
         System.out.println("Interpolation Search");
         //Interpolation Search

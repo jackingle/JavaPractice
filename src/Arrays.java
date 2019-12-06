@@ -141,7 +141,7 @@ public static int[] reverseArray(int[] arr) {
 		}
 		return -1;
 	}
-	int iBinarySearch(int arr[], int x) 
+	static int iBinarySearch(int arr[], int x) 
     { 
         int l = 0, r = arr.length - 1; 
         while (l <= r) { 
@@ -180,7 +180,7 @@ public static int[] reverseArray(int[] arr) {
         
         int arr[] = { 2, 3, 4, 10, 40, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55 }; 
         int n = arr.length; 
-        int x = 1; 
+        int x = 45; 
         System.out.println(x + " is the number we are looking for in the array");
         System.out.println(n + " is the array length" + "\n");
         
@@ -214,7 +214,8 @@ public static int[] reverseArray(int[] arr) {
         
         System.out.println("Binary Search");
         //Binary Search
-        int result = binarySearch(arr, 0, n - 1, x); 
+        //int result = binarySearch(arr, 0, n - 1, x); 
+        int result = iBinarySearch(arr, x);
         if (result == -1) 
             System.out.println("Element not present"); 
         else

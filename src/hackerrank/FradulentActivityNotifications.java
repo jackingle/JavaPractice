@@ -95,7 +95,7 @@ public class Solution {
     		return sum/2;
     	}
     	else {
-    		return arr[(int) Math.floor(arr.length/2)];
+    		return arr[(int) (arr.length/2)];
     	}
     	 	
     }
